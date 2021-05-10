@@ -24,16 +24,15 @@ public class TheReportersController {
         if (incident.isNew()) {
             System.out.println(incident.getName());  // for testing
             System.out.println(incident.getDescription()); //for testing
-
             incidentRepository.addIncident(incident);
+            //model.addAttribute("incident", incident);
         }
      /*  else {
             // bookRepository.editBook(book);
-            // todo replace with call PUT /book/{id} (with book object as json in request body
             // restTemplate.put("http://localhost:8080/book/" + book.getId(), book, Book.class);
         }
 */
-        return "redirect:/";
+        return "form";
     }
 
 }

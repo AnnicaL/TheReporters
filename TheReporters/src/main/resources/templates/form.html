@@ -29,10 +29,11 @@
     </form>
 </div>
 
-<div th:object="${incident}">
-    <p th:text="'Summery: '" + th:field="*{summery}"></p>
+<div th:if="${incident.summery != null}">
+    <p th:text="'Summary: ' + ${incident.summery}"></p>
     <p th:text="'Description: ' + ${incident.description}"></p>
     <p th:text="'Product: ' + ${incident.product}"></p>
+    <p th:text="'Name: ' + ${incident.name}"></p>
 </div>
 
 </body>
