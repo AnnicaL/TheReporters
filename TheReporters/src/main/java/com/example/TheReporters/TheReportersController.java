@@ -22,17 +22,17 @@ public class TheReportersController {
     @PostMapping("/save")
     public String set(@ModelAttribute Incident incident) {
         if (incident.isNew()) {
-            System.out.println(incident.getName());
-            System.out.println(incident.getDescription());
-            // Incident newIBook = restTemplate.postForObject("http://localhost:8080/book/", book, Book.class);
-            // bookRepository.addBook(book); // todo replace with call POST /book (with book object as json in request body)
+            System.out.println(incident.getName());  // for testing
+            System.out.println(incident.getDescription()); //for testing
+
+            incidentRepository.addIncident(incident);
         }
-        else {
+     /*  else {
             // bookRepository.editBook(book);
             // todo replace with call PUT /book/{id} (with book object as json in request body
             // restTemplate.put("http://localhost:8080/book/" + book.getId(), book, Book.class);
         }
-
+*/
         return "redirect:/";
     }
 

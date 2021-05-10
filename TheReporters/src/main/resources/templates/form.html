@@ -28,6 +28,13 @@
         <input type="submit" value="Send">
     </form>
 </div>
+
+<div th:object="${incident}">
+    <p th:text="'Summery: '" + th:field="*{summery}"></p>
+    <p th:text="'Description: ' + ${incident.description}"></p>
+    <p th:text="'Product: ' + ${incident.product}"></p>
+</div>
+
 </body>
 </html>
 
