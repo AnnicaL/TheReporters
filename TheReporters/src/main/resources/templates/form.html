@@ -19,12 +19,12 @@
 
     <form action="/save" th:object="${incident}" method="POST">
         Summery: <input type="text" th:field="*{summery}"/>
-        Description: <input type="textarea" th:field="*{description}"/>
+        Description: <input type="text" th:field="*{description}"/>
         Product: <input type= "text" th:field="*{product}"/>
-        StoreID: <input type="text" th:field="*{storeid}"/>
+        StoreID: <input type="text" th:field="*{storeID}"/>
         Name: <input type="text" th:field="*{name}"/>
-        Phonenumber: <input type="text" th:field="*{phonenumber}"/>
-      <!--  <input th:if="${incident.id != null}" type="hidden" th:field="*{id}"/> -->
+        Phonenumber: <input type="text" th:field="*{phoneNumber}"/>
+      <!--  <input th:if="${incident.id != null}" type="hidden" th:field="*{id}"/> kan användas när man vill editera en incident längre fram -->
         <input type="submit" value="Send">
     </form>
 </div>
