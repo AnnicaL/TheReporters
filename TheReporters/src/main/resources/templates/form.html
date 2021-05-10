@@ -13,18 +13,21 @@
 
 </head>
 <body>
-    <h1>Book</h1>
+<div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold">Reporting Error</h1>
 
-    <form action="/save" th:object="${book}" method="POST">
+
+    <form action="/save" th:object="${incident}" method="POST">
         Summery: <input type="text" th:field="*{summery}"/>
-        Description: <input type="text" cols="40" rows="5" th:field="*{description}"/>
+        Description: <input type="textarea" th:field="*{description}"/>
         Product: <input type= "text" th:field="*{product}"/>
         StoreID: <input type="text" th:field="*{storeid}"/>
         Name: <input type="text" th:field="*{name}"/>
         Phonenumber: <input type="text" th:field="*{phonenumber}"/>
-        <input th:if="${book.id != null}" type="hidden" th:field="*{id}"/>
+      <!--  <input th:if="${incident.id != null}" type="hidden" th:field="*{id}"/> -->
         <input type="submit" value="Send">
     </form>
-
+</div>
 </body>
 </html>
+
