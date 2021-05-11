@@ -13,19 +13,36 @@
 
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="/form">Report error</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 <div class="px-4 py-5 my-5 text-center">
     <h1 class="display-5 fw-bold">Reporting Error</h1>
 
 
     <form action="/save" th:object="${incident}" method="POST">
-        Summery: <input type="text" th:field="*{summery}"/>
-        Description: <input type="text" th:field="*{description}"/>
-        Product: <input type= "text" th:field="*{product}"/>
-        StoreID: <input type="text" th:field="*{storeID}"/>
-        Name: <input type="text" th:field="*{name}"/>
-        Phonenumber: <input type="text" th:field="*{phoneNumber}"/>
+        Summary:<br> <input type="text" size="28" th:field="*{summery}"/><br><br>
+        Description:<br> <textarea rows="5", cols="30" th:field="*{description}"></textarea> <br><br>
+        Product:<br> <select th:field="*{product}">
+        <option value="Screen">   Screen      </option>
+        <option value="Phone">   Phone      </option>
+        <option value="Music">   Music      </option>
+    </select><br><br>
+        StoreID:<br> <input type="text" size="28" th:field="*{storeID}"/><br><br>
+        Name:<br> <input type="text" size="28" th:field="*{name}"/><br><br>
+        Phone number:<br> <input type="text" size="28" th:field="*{phoneNumber}"/><br><br>
       <!--  <input th:if="${incident.id != null}" type="hidden" th:field="*{id}"/> kan användas när man vill editera en incident längre fram -->
-        <input type="submit" value="Send">
+        <input type="submit" class="btn btn-primary btn-lg px-4 me-sm-3" value="Send">
     </form>
 </div>
 

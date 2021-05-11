@@ -14,6 +14,11 @@ public class TheReportersController {
     private IncidentRepository incidentRepository;
 
     @GetMapping("/")
+    public String first(Model model) {
+        model.addAttribute("incident", new Incident());
+        return "index";
+    }
+    @GetMapping("/form")
     public String add(Model model) {
         model.addAttribute("incident", new Incident());
         return "form";
