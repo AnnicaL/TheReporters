@@ -18,9 +18,15 @@ public class TheReportersController {
         model.addAttribute("incident", new Incident());
         return "index";
     }
+
+    @GetMapping("/logg")
+    public String logg(Model model) {
+        return "logg";
+    }
+
     @GetMapping("/form")
     public String add(Model model) {
-        model.addAttribute("incident", new Incident("","","", "", "", ""));
+        model.addAttribute("incident", new Incident("", "", "", "", "", ""));
         return "form";
     }
 
@@ -31,14 +37,7 @@ public class TheReportersController {
             System.out.println(incident.getDescription()); //for testing
             incidentRepository.addIncident(incident);
             model.addAttribute("NumberOfIncidents", incidentRepository.getRepositorySize());
-            //model.addAttribute("incident", incident);
         }
-     /*  else {
-            // bookRepository.editBook(book);
-            // restTemplate.put("http://localhost:8080/book/" + book.getId(), book, Book.class);
-        }
-*/
-        return "logg";
-    }
-
+    return "logg";
+   }
 }
