@@ -43,14 +43,8 @@
         Phone number:<br> <input type="text" size="28" th:field="*{phoneNumber}"/><br><br>
       <!--  <input th:if="${incident.id != null}" type="hidden" th:field="*{id}"/> kan användas när man vill editera en incident längre fram -->
         <input type="submit" class="btn btn-primary btn-lg px-4 me-sm-3" value="Send">
-    </form>
-</div>
 
-<div th:if="${incident.summery != null}">
-    <p th:text="'Summary: ' + ${incident.summery}"></p>
-    <p th:text="'Description: ' + ${incident.description}"></p>
-    <p th:text="'Product: ' + ${incident.product}"></p>
-    <p th:text="'Name: ' + ${incident.name}"></p>
+    </form>
 </div>
 
 </body>

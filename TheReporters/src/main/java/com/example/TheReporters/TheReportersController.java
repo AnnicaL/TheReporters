@@ -20,16 +20,17 @@ public class TheReportersController {
     }
     @GetMapping("/form")
     public String add(Model model) {
-        model.addAttribute("incident", new Incident());
+        model.addAttribute("incident", new Incident("","","", "", "", ""));
         return "form";
     }
 
     @PostMapping("/save")
-    public String set(@ModelAttribute Incident incident) {
+    public String set(Model model, @ModelAttribute Incident incident) {
         if (incident.isNew()) {
             System.out.println(incident.getName());  // for testing
             System.out.println(incident.getDescription()); //for testing
             incidentRepository.addIncident(incident);
+            model.addAttribute("NumberOfIncidents", incidentRepository.getRepositorySize());
             //model.addAttribute("incident", incident);
         }
      /*  else {
@@ -37,7 +38,7 @@ public class TheReportersController {
             // restTemplate.put("http://localhost:8080/book/" + book.getId(), book, Book.class);
         }
 */
-        return "form";
+        return "logg";
     }
 
 }

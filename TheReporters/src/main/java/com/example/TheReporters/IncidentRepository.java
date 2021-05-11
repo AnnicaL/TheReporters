@@ -24,6 +24,10 @@ public class IncidentRepository {
         return incident;
     }
 
+    public int getRepositorySize (){
+         return incidents.size();
+    }
+
 
 
 
