@@ -14,19 +14,16 @@ public class IncidentRepository {
 
     }
 
-    // add an Incident to the repository
-    public Incident addIncident(Incident incident) {
+    public void addIncident(Incident incident) {
+     incidents.add(incident);
 
-    //    Incident lastIncident = incidents.get(incidents.size() -1);
-    //    incident.setId(lastIncident.getId() +1);
-        incidents.add(incident);
-
-        return incident;
     }
 
     public int getRepositorySize (){
          return incidents.size();
     }
+
+
 
 
 

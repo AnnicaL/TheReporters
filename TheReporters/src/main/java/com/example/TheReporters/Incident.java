@@ -30,6 +30,10 @@ public class Incident {
         return summery;
     }
 
+    public static String testOfReporters1() {
+        return"";
+    }
+
     public void setSummery(String summery) {
         this.summery = summery;
     }
