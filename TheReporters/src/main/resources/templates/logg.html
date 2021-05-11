@@ -28,6 +28,8 @@
 </nav>
 </div>
 
+<div class="px-10 py-10 my-10 text-center">
+  <h2 class="fw-bold">Incident logg</h2>
 <div th:if="${incident.summery != null}">
   <p th:text="'Summary: ' + ${incident.summery}"></p>
   <p th:text="'Description: ' + ${incident.description}"></p>
@@ -35,6 +37,6 @@
   <p th:text="'Name: ' + ${incident.name}"></p>
   <p th:text="'Amounts of incidents: ' + ${NumberOfIncidents}"></p>
 </div>
-
+</div>
 </body>
 </html>
