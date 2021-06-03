@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>Incidents</title>
+</head>
+<body>
+    <h1>Incident</h1>
+
+    <form action="/saveIncident" th:object="${incident}" method="POST">
+        Summary: <input type="text" th:field="*{summary}"/>
+        Description: <input type="text" th:field="*{description}"/>
+        Product: <input type="text" th:field="*{product}"/>
+        Store ID: <input type="text" th:field="*{storeID}"/>
+        Name: <input type="text" th:field="*{name}"/>
+        Phone number: <input type="text" th:field="*{phoneNumber}"/>
+        <input th:if="${id != null}" type="hidden" th:field="*{id}"/>
+        <input type="submit" value="Save incident">
+    </form>
+</body>
+</html>
+

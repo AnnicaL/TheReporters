@@ -27,7 +27,7 @@ public class TheReportersController {
     }
 
     @GetMapping("/form")
-    public String add(Model model) {
+    public String addOld(Model model) {
         model.addAttribute("incident", new Incident("", "", "", "", "", ""));
         return "form";
     }
@@ -39,7 +39,7 @@ public class TheReportersController {
         return "incidents";
     }
 
-    /*@PostMapping("/save")
+   /* @PostMapping("/save")
     public String set(Model model, @ModelAttribute Incident incident) {
         if (incident.isNew()) {
             System.out.println(incident.getName());  // for testing
@@ -49,4 +49,16 @@ public class TheReportersController {
         }
     return "logg";
    }*/
+
+    @GetMapping("/addIncident")
+    public String add(Model model) {
+        model.addAttribute("incident", new Incident());
+        return "incidentForm";
+    }
+
+    @PostMapping("/saveIncident")
+    public String set(@ModelAttribute Incident incident) {
+        incidentRepository.save(incident);
+        return "redirect:/incidents";
+    }
 }
