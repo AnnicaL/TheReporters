@@ -21,15 +21,34 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a class="nav-link" >LogOut</a></li>
-           </ul>
+                <li class="nav-item"><a class="nav-link" href="/form">Create Incident</a></li>
+                <li class="nav-item"><a class="nav-link" href="/incidents">Show Incidents</a></li>
+            </ul>
+
         </div>
     </div>
 </nav>
 <div class="px-4 py-5 my-5 text-center">
     <h1 class="display-5 fw-bold">Create Incident </h1>
 
+    <form action="/saveIncident" th:object="${incident}" method="POST">
+        <b>Summary:</b><br> <input type="text" size="28" th:field="*{summary}"/><br><br>
+        <b>Description:</b><br> <textarea rows="5", cols="30" th:field="*{description}"></textarea> <br><br>
+        <b>Product:</b><br> <select th:field="*{product}">
+        <option value="Screen">   Screen      </option>
+        <option value="Tablet">   Tablet      </option>
+        <option value="Music">   Music      </option>
+    </select><br><br>
+        <b>StoreID:</b><br> <input type="text" size="28" th:field="*{storeID}"/><br><br>
+        <b>Name:</b><br> <input type="text" size="28" th:field="*{name}"/><br><br>
+        <b>Phone number:</b><br> <input type="text" size="28" th:field="*{phoneNumber}"/><br><br>
+        <input type="submit" class="btn btn-primary btn-lg px-4 me-sm-3" value="Send">
 
+    </form>
+
+
+
+<!--
     <form action="/save" th:object="${incident}" method="POST">
         <b>Summary:</b><br> <input type="text" size="28" th:field="*{summary}"/><br><br>
         <b>Description:</b><br> <textarea rows="5", cols="30" th:field="*{description}"></textarea> <br><br>
@@ -43,7 +62,7 @@
         <b>Phone number:</b><br> <input type="text" size="28" th:field="*{phoneNumber}"/><br><br>
         <input type="submit" class="btn btn-primary btn-lg px-4 me-sm-3" value="Send">
 
-    </form>
+    </form>-->
 </div>
 
 </body>

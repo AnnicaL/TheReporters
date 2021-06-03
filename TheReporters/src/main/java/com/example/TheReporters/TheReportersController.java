@@ -27,7 +27,7 @@ public class TheReportersController {
     }
 
     @GetMapping("/form")
-    public String addOld(Model model) {
+    public String add(Model model) {
         model.addAttribute("incident", new Incident("", "", "", "", "", ""));
         return "form";
     }
@@ -50,11 +50,11 @@ public class TheReportersController {
     return "logg";
    }*/
 
-    @GetMapping("/addIncident")
+  /*  @GetMapping("/addIncident")
     public String add(Model model) {
         model.addAttribute("incident", new Incident());
         return "incidentForm";
-    }
+    }*/
 
     @PostMapping("/saveIncident")
     public String set(@ModelAttribute Incident incident) {
