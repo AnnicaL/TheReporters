@@ -31,7 +31,7 @@
 
 
     <form action="/save" th:object="${incident}" method="POST">
-        <b>Summary:</b><br> <input type="text" size="28" th:field="*{summery}"/><br><br>
+        <b>Summary:</b><br> <input type="text" size="28" th:field="*{summary}"/><br><br>
         <b>Description:</b><br> <textarea rows="5", cols="30" th:field="*{description}"></textarea> <br><br>
             <b>Product:</b><br> <select th:field="*{product}">
         <option value="Screen">   Screen      </option>

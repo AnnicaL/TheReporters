@@ -1,7 +1,7 @@
 package com.example.TheReporters;
 
 public class Incident {
-    String summery;
+    String summary;
     String description;
     String product;
     String storeID;
@@ -12,8 +12,8 @@ public class Incident {
     public Incident() {
     }
 
-    public Incident(String summery, String description, String product, String storeID, String name, String phoneNumber) {
-        this.summery = summery;
+    public Incident(String summary, String description, String product, String storeID, String name, String phoneNumber) {
+        this.summary = summary;
         this.description = description;
         this.product = product;
         this.storeID = storeID;
@@ -27,7 +27,7 @@ public class Incident {
     }
 
     public String getSummery() {
-        return summery;
+        return summary;
     }
 
     public static String testOfReporters1() {
@@ -35,7 +35,7 @@ public class Incident {
     }
 
     public void setSummery(String summery) {
-        this.summery = summery;
+        this.summary = summery;
     }
 
     public String getDescription() {
