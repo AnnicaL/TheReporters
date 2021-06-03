@@ -27,8 +27,19 @@
     </div>
 </nav>
 <h1>Incidents</h1>
-
-<table style="text-align:left">
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Incident ID</th>
+        <th>Summary</th>
+        <th>Description</th>
+        <th>Product</th>
+        <th>Store ID</th>
+        <th>Name</th>
+        <th>Phone Number</th>
+    </tr>
+    </thead>
+<!--<table style="text-align:left">
     <tr>
         <th>Incident ID</th>
         <th>Summary</th>
@@ -39,6 +50,7 @@
         <th>Phone Number</th>
 
     </tr>
+    -->
     <tr th:each="incident : ${incidents}">
         <th th:text="${incident.id}"></th>
         <th th:text="${incident.summary}"></th>
