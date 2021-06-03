@@ -32,9 +32,9 @@
     <h1 class="display-5 fw-bold">Create Incident </h1>
 
     <form action="/saveIncident" th:object="${incident}" method="POST">
-        <b>Summary:</b><br> <input type="text" size="28" th:field="*{summary}"/><br><br>
-        <b>Description:</b><br> <textarea rows="5", cols="30" th:field="*{description}"></textarea> <br><br>
-        <b>Product:</b><br> <select th:field="*{product}" style="width:200px">
+        <b>Summary:</b><br> <input type="text" size="28" th:field="*{summary}" required/><br><br>
+        <b>Description:</b><br> <textarea rows="5", cols="30" th:field="*{description}" required></textarea> <br><br>
+        <b>Product:</b><br> <select th:field="*{product}" style="width:200px" required>
         <option value="">Please select...</option>
         <option value="Screen">   Screen </option>
         <option value="Tablet">   Tablet </option>
@@ -44,7 +44,7 @@
 
     </select><br><br>
         <!--<b>StoreID:</b><br> <input type="text" size="28" th:field="*{storeID}"/><br><br>-->
-        <b>StoreID:</b><br> <select th:field="*{storeID}" style="width:200px"><br><br>
+        <b>StoreID:</b><br> <select th:field="*{storeID}" style="width:200px" required><br><br>
         <option value="">Please select...</option>
         <option value="SE0020">SE0020 Hamngatan</option>
         <option value="SE0033">SE0033 H&M Home</option>
@@ -53,29 +53,13 @@
         <option value="CA0007">CA0007 Toronto</option>
         <option value="CA0012">CA0012 Montreal</option>
     </select><br><br>
-        <b>Name:</b><br> <input type="text" size="28" th:field="*{name}"/><br><br>
-        <b>Phone number:</b><br> <input type="text" size="28" th:field="*{phoneNumber}"/><br><br>
+        <b>Name:</b><br> <input type="text" size="28" th:field="*{name}" required/><br><br>
+        <b>Phone number:</b><br> <input type="text" size="28" th:field="*{phoneNumber}"required/><br><br>
         <input type="submit" class="btn btn-primary btn-lg px-4 me-sm-3" value="Send">
 
     </form>
 
 
-
-<!--
-    <form action="/save" th:object="${incident}" method="POST">
-        <b>Summary:</b><br> <input type="text" size="28" th:field="*{summary}"/><br><br>
-        <b>Description:</b><br> <textarea rows="5", cols="30" th:field="*{description}"></textarea> <br><br>
-            <b>Product:</b><br> <select th:field="*{product}">
-        <option value="Screen">   Screen      </option>
-        <option value="Tablet">   Tablet      </option>
-        <option value="Music">   Music      </option>
-    </select><br><br>
-       <b>StoreID:</b><br> <input type="text" size="28" th:field="*{storeID}"/><br><br>
-        <b>Name:</b><br> <input type="text" size="28" th:field="*{name}"/><br><br>
-        <b>Phone number:</b><br> <input type="text" size="28" th:field="*{phoneNumber}"/><br><br>
-        <input type="submit" class="btn btn-primary btn-lg px-4 me-sm-3" value="Send">
-
-    </form>-->
 </div>
 
 </body>
