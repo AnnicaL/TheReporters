@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
+
 @Controller
 public class TheReportersController {
 
@@ -30,7 +32,14 @@ public class TheReportersController {
         return "form";
     }
 
-    @PostMapping("/save")
+    @GetMapping("/incidents")
+    public String incidents(Model model) {
+        List<Incident> incidents = (List<Incident>)incidentRepository.findAll();
+        model.addAttribute("incidents", incidents);
+        return "incidents";
+    }
+
+    /*@PostMapping("/save")
     public String set(Model model, @ModelAttribute Incident incident) {
         if (incident.isNew()) {
             System.out.println(incident.getName());  // for testing
@@ -39,5 +48,5 @@ public class TheReportersController {
             model.addAttribute("NumberOfIncidents", incidentRepository.getRepositorySize());
         }
     return "logg";
-   }
+   }*/
 }

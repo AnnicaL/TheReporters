@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>Incidents</title>
+</head>
+<body>
+<h1>Incidents</h1>
+
+<!-- <a href="/addCustomer">New Customer</a> -->
+
+<table style="text-align:left">
+    <tr>
+        <th>Incident ID</th>
+        <th>Summary</th>
+        <th>Description</th>
+        <th>Product</th>
+        <th>Store ID</th>
+        <th>Name</th>
+        <th>Phone Number</th>
+
+    </tr>
+    <tr th:each="incident : ${incidents}">
+        <th th:text="${incident.id}"></th>
+        <th th:text="${incident.summary}"></th>
+        <th th:text="${incident.description}"></th>
+        <th th:text="${incident.product}"></th>
+        <th th:text="${incident.storeID}"></th>
+        <th th:text="${incident.name}"></th>
+        <th th:text="${incident.phoneNumber}"></th>
+    </tr>
+</table>
+
+</body>
+</html>

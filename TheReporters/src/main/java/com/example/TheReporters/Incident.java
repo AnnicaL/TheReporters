@@ -1,13 +1,19 @@
 package com.example.TheReporters;
 
+import javax.persistence.*;
+
+@Entity
 public class Incident {
     String summary;
     String description;
     String product;
     String storeID;
     String name;
+    @Column(name ="PHONENUMBER")
     String phoneNumber;
-    Integer id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long id;
 
     public Incident() {
     }
@@ -26,16 +32,8 @@ public class Incident {
         return this.id == null;
     }
 
-    public String getSummery() {
-        return summary;
-    }
-
     public static String testOfReporters1() {
-        return"";
-    }
-
-    public void setSummery(String summery) {
-        this.summary = summery;
+        return "";
     }
 
     public String getDescription() {
@@ -78,11 +76,11 @@ public class Incident {
         this.phoneNumber = phoneNumber;
     }
 
-    public int getId() {
-        return id;
-    }
+    public Long getId() { return id; }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    public void setId(Long id) { this.id = id; }
+
+    public String getSummary() { return summary; }
+
+    public void setSummary(String summary) { this.summary = summary; }
 }

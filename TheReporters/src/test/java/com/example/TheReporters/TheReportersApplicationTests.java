@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 public class TheReportersApplicationTests {
 
-
+	/*
 	@Test
 	public void testOfReporters1() {
 		IncidentRepository incidentRepository = new IncidentRepository();
@@ -17,6 +17,5 @@ public class TheReportersApplicationTests {
 
 		Assertions.assertEquals(1, incidentRepository.getRepositorySize());
 	}
-
-
+*/
 }

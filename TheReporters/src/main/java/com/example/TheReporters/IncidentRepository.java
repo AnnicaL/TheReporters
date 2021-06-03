@@ -1,11 +1,16 @@
 package com.example.TheReporters;
 
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
+public interface IncidentRepository extends CrudRepository<Incident, Long> {
+    List<Incident> findAll();
+
+}
+
+/* @Service
 public class IncidentRepository {
     private List<Incident> incidents;
 
@@ -22,11 +27,5 @@ public class IncidentRepository {
     public int getRepositorySize (){
          return incidents.size();
     }
-
-
-
-
-
-
-
 }
+*/
