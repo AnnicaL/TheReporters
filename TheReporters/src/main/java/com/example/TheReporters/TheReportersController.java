@@ -60,4 +60,9 @@ public class TheReportersController {
 
         return "redirect:/incidents";
     }
+
+    @GetMapping("/logout")
+    public String logout() {
+        return "redirect:/index";
+    }
 }
