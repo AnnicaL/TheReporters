@@ -34,7 +34,7 @@
     <form action="/saveIncident" th:object="${incident}" method="POST">
         <div sec:authorize="hasRole('ROLE_ADMIN')">
             <b>Status:</b><br>
-            <select th:field="*{status}" style="width:200px" required>
+            <select th:field="*{status}" style="width:257px" required>
                 <option value="New">New</option>
                 <option value="In progress">In progress</option>
                 <option value="On hold">On hold</option>
@@ -44,7 +44,7 @@
         <b>Summary:</b><br><input type="text" size="28" th:field="*{summary}" required/><br><br>
         <b>Description:</b><br><textarea rows="5", cols="30" th:field="*{description}" required></textarea> <br><br>
         <b>Product:</b><br>
-        <select th:field="*{product}" style="width:200px" required>
+        <select th:field="*{product}" style="width:257px" required>
             <option value="">Please select...</option>
             <option value="Screen">   Screen </option>
             <option value="Tablet">   Tablet </option>
@@ -53,7 +53,7 @@
             <option value="Scanner">   Scanner </option>
         </select><br><br>
         <b>StoreID:</b><br>
-        <select th:field="*{storeID}" style="width:200px" required><br><br>
+        <select th:field="*{storeID}" style="width:257px" required><br><br>
             <option value="">Please select...</option>
             <option value="SE0020">SE0020 Hamngatan</option>
             <option value="SE0033">SE0033 H&M Home</option>
