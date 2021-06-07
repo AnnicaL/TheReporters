@@ -15,6 +15,8 @@ public class Incident {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
+    //Testar att lägga till en ny rad
+
     public Incident() {
     }
 
