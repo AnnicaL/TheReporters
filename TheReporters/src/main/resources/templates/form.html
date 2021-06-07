@@ -30,11 +30,10 @@
     </div>
 </nav>
 <div class="px-4 py-5 my-5 text-center">
-    <h1 class="display-5 fw-bold">Create and Edit Incident</h1>
+    <h1 class="display-5 fw-bold">Create/Edit Incident</h1>
     <form action="/saveIncident" th:object="${incident}" method="POST">
         <div sec:authorize="hasRole('ROLE_ADMIN')">
             <b>Status:</b><br>
-            <!-- <input type="text" size="28" th:field="*{status}" required/><br><br> -->
             <select th:field="*{status}" style="width:200px" required>
                 <option value="New">New</option>
                 <option value="In progress">In progress</option>
@@ -66,7 +65,9 @@
         <b>Name:</b><br> <input type="text" size="28" th:field="*{name}" required/><br><br>
         <b>Phone number:</b><br> <input type="text" size="28" th:field="*{phoneNumber}"required/><br><br>
         <input type="hidden" th:field="*{id}"/>
-        <input type="hidden" th:field="*{status}"/>
+        <div sec:authorize="hasRole('ROLE_USER')">
+            <input type="hidden" th:field="*{status}"/>
+        </div>
         <input type="submit" class="btn btn-primary btn-lg px-4 me-sm-3" value="Save">
     </form>
 </div>
