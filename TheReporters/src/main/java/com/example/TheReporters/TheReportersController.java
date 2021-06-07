@@ -22,11 +22,6 @@ public class TheReportersController {
         return "index";
     }
 
-    @GetMapping("/logg")
-    public String logg(Model model) {
-        return "logg";
-    }
-
     @GetMapping("/form")
     public String add(Model model) {
         model.addAttribute("incident", new Incident("", "", "", "", "", "", "New"));
@@ -52,12 +47,6 @@ public class TheReportersController {
         model.addAttribute(incident);
         return "form";
     }
-
-    /*@PostMapping("/edit/{id}")
-    public String set2(@ModelAttribute Incident incident) {
-        incidentRepository.save(incident);
-        return "redirect:/incidents";
-    } */
 
     @GetMapping("/logout")
     public String logout() {
