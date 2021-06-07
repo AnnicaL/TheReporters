@@ -29,7 +29,7 @@ public class TheReportersController {
 
     @GetMapping("/form")
     public String add(Model model) {
-        model.addAttribute("incident", new Incident("", "", "", "", "", ""));
+        model.addAttribute("incident", new Incident("", "", "", "", "", "", "New"));
         return "form";
     }
 
@@ -40,29 +40,12 @@ public class TheReportersController {
         return "incidents";
     }
 
-   /* @PostMapping("/save")
-    public String set(Model model, @ModelAttribute Incident incident) {
-        if (incident.isNew()) {
-            System.out.println(incident.getName());  // for testing
-            System.out.println(incident.getDescription()); //for testing
-            incidentRepository.addIncident(incident);
-            model.addAttribute("NumberOfIncidents", incidentRepository.getRepositorySize());
-        }
-    return "logg";
-   }*/
-
-  /*  @GetMapping("/addIncident")
-    public String add(Model model) {
-        model.addAttribute("incident", new Incident());
-        return "incidentForm";
-    }*/
-
     @PostMapping("/saveIncident")
     public String set(@ModelAttribute Incident incident) {
         incidentRepository.save(incident);
         return "redirect:/incidents";
     }
-// DOES NOT WORK , DISPLAY THE DATA BUT SAVE AS NEW INCIDENT
+
     @GetMapping("/edit/{id}")
     public String edit(Model model, @PathVariable Long id) {
         Incident incident = incidentRepository.findById(id).get();
@@ -77,8 +60,4 @@ public class TheReportersController {
 
         return "redirect:/incidents";
     }
-
-
-
-
 }

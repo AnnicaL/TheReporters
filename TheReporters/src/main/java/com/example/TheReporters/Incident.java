@@ -11,26 +11,25 @@ public class Incident {
     String name;
     @Column(name ="PHONENUMBER")
     String phoneNumber;
+    String status;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    //Testar att lägga till en ny rad
-
     public Incident() {
     }
 
-    public Incident(String summary, String description, String product, String storeID, String name, String phoneNumber) {
+    public Incident(String summary, String description, String product, String storeID, String name, String phoneNumber, String status) {
         this.summary = summary;
         this.description = description;
         this.product = product;
         this.storeID = storeID;
         this.name = name;
         this.phoneNumber = phoneNumber;
+        this.status = status;
     }
 
     public boolean isNew(){
-
         return this.id == null;
     }
 
@@ -85,4 +84,12 @@ public class Incident {
     public String getSummary() { return summary; }
 
     public void setSummary(String summary) { this.summary = summary; }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }

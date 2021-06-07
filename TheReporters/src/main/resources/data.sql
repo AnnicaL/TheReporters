@@ -1,3 +1,6 @@
-INSERT INTO INCIDENT (SUMMARY, DESCRIPTION, PRODUCT, STOREID, NAME, PHONENUMBER) VALUES ('Broken screen', 'The iPAD screen is black', 'Tablet', 'SE0020', 'Christian Ekblad', '07011122333');
-INSERT INTO INCIDENT (SUMMARY, DESCRIPTION, PRODUCT, STOREID, NAME, PHONENUMBER) VALUES ('Music quiet', 'We cant here the sound', 'Music', 'US0700', 'Mike Tyson', '0229879871');
-INSERT INTO INCIDENT (SUMMARY, DESCRIPTION, PRODUCT, STOREID, NAME, PHONENUMBER) VALUES ('No battery in tablet', 'Looks like the battery is empty', 'Tablet', 'DK0123', 'Stine Jeppe', '322353335');
+INSERT INTO INCIDENT (SUMMARY, DESCRIPTION, PRODUCT, STOREID, NAME, PHONENUMBER, STATUS) VALUES ('Broken screen', 'The iPAD screen is black', 'Tablet', 'SE0020', 'Christian Ekblad', '07011122333', 'New');
+INSERT INTO INCIDENT (SUMMARY, DESCRIPTION, PRODUCT, STOREID, NAME, PHONENUMBER, STATUS) VALUES ('Music quiet', 'We cant here the sound', 'Music', 'US0700', 'Mike Tyson', '0229879871', 'In progress');
+INSERT INTO INCIDENT (SUMMARY, DESCRIPTION, PRODUCT, STOREID, NAME, PHONENUMBER, STATUS) VALUES ('No battery in tablet', 'Looks like the battery is empty', 'Tablet', 'DK0123', 'Stine Jeppe', '322353335', 'Resolved');
+INSERT INTO INCIDENT (SUMMARY, DESCRIPTION, PRODUCT, STOREID, NAME, PHONENUMBER, STATUS) VALUES ('Showing funny thing', 'Showing Disney Movies', 'Screen', 'US0400', 'Greg Smith', '1235763674', 'New');
+INSERT INTO INCIDENT (SUMMARY, DESCRIPTION, PRODUCT, STOREID, NAME, PHONENUMBER, STATUS) VALUES ('Beeping scanner', 'Does not charge', 'Scanner', 'CA0012', 'Jennifer Dior', '8500234356', 'In progress');
+INSERT INTO INCIDENT (SUMMARY, DESCRIPTION, PRODUCT, STOREID, NAME, PHONENUMBER, STATUS) VALUES ('Store counter counting wrong', 'The counter does not count kids', 'Counter', 'SE0020', 'Klas Svensson', '085174215', 'In progress');

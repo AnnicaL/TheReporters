@@ -29,7 +29,7 @@
     </div>
 </nav>
 <div class="px-4 py-5 my-5 text-center">
-    <h1 class="display-5 fw-bold">Create Incident </h1>
+    <h1 class="display-5 fw-bold">Create/Edit Incident</h1>
 
     <form action="/saveIncident" th:object="${incident}" method="POST">
         <b>Summary:</b><br> <input type="text" size="28" th:field="*{summary}" required/><br><br>
@@ -55,13 +55,11 @@
     </select><br><br>
         <b>Name:</b><br> <input type="text" size="28" th:field="*{name}" required/><br><br>
         <b>Phone number:</b><br> <input type="text" size="28" th:field="*{phoneNumber}"required/><br><br>
-        <input type="submit" class="btn btn-primary btn-lg px-4 me-sm-3" value="Send">
-
+        <input type="hidden" th:field="*{id}"/>
+        <input type="hidden" th:field="*{status}"/>
+        <input type="submit" class="btn btn-primary btn-lg px-4 me-sm-3" value="Save">
     </form>
-
-
 </div>
-
 </body>
 </html>
 
