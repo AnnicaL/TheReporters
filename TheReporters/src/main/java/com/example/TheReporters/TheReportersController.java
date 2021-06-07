@@ -46,20 +46,18 @@ public class TheReportersController {
         return "redirect:/incidents";
     }
 
-    @GetMapping("/edit/{id}")
+    @GetMapping("/edit/{id}") // used when the edit link is clicked
     public String edit(Model model, @PathVariable Long id) {
         Incident incident = incidentRepository.findById(id).get();
-
         model.addAttribute(incident);
         return "form";
     }
 
-    @PostMapping("/edit/{id}")
+    /*@PostMapping("/edit/{id}")
     public String set2(@ModelAttribute Incident incident) {
         incidentRepository.save(incident);
-
         return "redirect:/incidents";
-    }
+    } */
 
     @GetMapping("/logout")
     public String logout() {
