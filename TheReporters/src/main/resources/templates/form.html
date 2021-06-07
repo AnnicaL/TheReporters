@@ -17,7 +17,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a class="nav-link" href="/form">Create Incident</a></li>
                 <li class="nav-item"><a class="nav-link" href="/incidents">Show Incidents</a></li>
                 <li class="nav-item">
                     <form th:action="@{/logout}" method="post" th:hidden="true" name="logoutForm">
@@ -25,12 +24,15 @@
                     </form>
                     <a class="nav-link" href="javascript: document.logoutForm.submit()">Logout</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:text="${'Logged in as ' + #httpServletRequest.remoteUser}"></a>
+                </li>
             </ul>
         </div>
     </div>
 </nav>
-<div class="px-4 py-5 my-5 text-center">
-    <h1 class="display-5 fw-bold">Create/Edit Incident</h1>
+<div class="px-4 py-2 my-2 text-center">
+    <h2 class="display-5 fw-bold">Create/Edit Incident</h2>
     <form action="/saveIncident" th:object="${incident}" method="POST">
         <div sec:authorize="hasRole('ROLE_ADMIN')">
             <b>Status:</b><br>
